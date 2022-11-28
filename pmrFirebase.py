@@ -4,7 +4,6 @@ import json
 import sys
 import ast
 import numpy as np
-import mysql.connector
 import warnings
 warnings.filterwarnings(action='ignore')
 

@@ -5,6 +5,7 @@ import sys
 import ast
 import numpy as np
 import warnings
+import streamlit as st
 warnings.filterwarnings(action='ignore')
 
 
@@ -83,10 +84,10 @@ def map_three(y, s, c):
     print('Reduce Function:')
     print(finalReduce)
 
-bedroom = str(sys.argv[1])
-state = str(sys.argv[2])
-coname = str(sys.argv[3])
-year = str(sys.argv[4])
+bedroom = st.text_input('Enter a number of bedrooms (1, 2, or 3):')
+state = st.text_input('Enter a state (ex. NY):')
+coname = st.text_input('Enter a country name (ex. Queens):')
+year = st.text_input('Enter a date in the format of yyyy-mm (ex. 2011-01):')
 
 if bedroom == '1':
     map_one(year,state,coname)

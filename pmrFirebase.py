@@ -38,9 +38,9 @@ def map_two(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    print('Map:')
+    st.write('Map:')
     for i in range(len(partitions)):
-        print('Partition:', partitions[i])
+        st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
         url = url1 + '/user/kacey/beds/city_MR_2_bedroom_n/'+ partitions[i] + '.json'
         response = requests.get(url)
@@ -48,24 +48,24 @@ def map_two(y, s, c):
         for i in fileDict:
             if i['State'] == s and i['CountyName'] == c:
                 want = i[y]
-                print(want)
+                st.write(want)
                 prices.append(want)
                 if reduce == {}:
                     reduce[y] = [want]
                 else:
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
-    print()
-    print('Reduce Function:')
-    print(finalReduce)
+    st.write()
+    st.write('Reduce Function:')
+    st.write(finalReduce)
 
 def map_three(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    print('Map:')
+    st.write('Map:')
     for i in range(len(partitions)):
-        print('Partition:', partitions[i])
+        st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
         url = url1 + '/user/kacey/beds/city_MR_3_bedroom_n/'+ partitions[i] + '.json'
         response = requests.get(url)
@@ -73,18 +73,18 @@ def map_three(y, s, c):
         for i in fileDict:
             if i['State'] == s and i['CountyName'] == c:
                 want = i[y]
-                print(want)
+                st.write(want)
                 prices.append(want)
                 if reduce == {}:
                     reduce[y] = [want]
                 else:
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
-    print()
-    print('Reduce Function:')
-    print(finalReduce)
+    st.write()
+    st.write('Reduce Function:')
+    st.write(finalReduce)
 
-print('PMR with Firebase Database')
+st.write('PMR with Firebase Database')
 bedroom = st.text_input('Enter a number of bedrooms (1, 2, or 3):')
 state = st.text_input('Enter a state (ex. NY):')
 coname = st.text_input('Enter a country name (ex. Queens):')
@@ -97,4 +97,4 @@ elif bedroom == '2':
 elif bedroom == '3':
     map_three(year,state,coname)
 else:
-    print("Filter search")
+    st.write("Filter search")

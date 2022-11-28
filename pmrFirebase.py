@@ -8,6 +8,7 @@ import warnings
 import streamlit as st
 warnings.filterwarnings(action='ignore')
 
+st.subheader("PMR_Firebase")
 
 def map_one(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6']

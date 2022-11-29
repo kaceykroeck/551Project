@@ -84,7 +84,8 @@ st.write('PMR with MySQL Database')
 bedroom = st.text_input('Enter a number of bedrooms (1, 2, or 3):')
 state = st.text_input('Enter a state (ex. NY):')
 coname = st.text_input('Enter a country name (ex. Queens):')
-year = st.text_input('Enter a date in the format of yyyy-mm (ex. 2011-01):')
+year = st.text_input('Enter a date in the format of yyyy_mm (ex. 2011_01):')
+year = 'Column_' + year
 
 if bedroom == '1':
     map_one(year,state,coname)

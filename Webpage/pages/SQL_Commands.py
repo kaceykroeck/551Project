@@ -7,7 +7,7 @@ import numpy as np
 import mysql.connector
 import streamlit as st
 
-db = mysql.connector.connect(host='ec2-3-101-14-210.us-west-1.compute.amazonaws.com', user='kaceykroeck', password='kK920395!', db='one', auth_plugin='mysql_native_password')
+db = mysql.connector.connect(**st.secrets["mysql"])
 st.write('EDFS Commands with MySQL Database')
 command = st.text_input('Enter a command:')
 com = command.split(' ')

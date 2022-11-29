@@ -128,6 +128,7 @@ if len(com) > 1:
         response = requests.get(url)
         st.write(response.content.decode('UTF-8'))
     elif 'readPartition' in com[0]:
+        input = com[0]
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
         j = input.split('(')
         other = j[1].split(')')

@@ -9,6 +9,14 @@ import streamlit as st
 
 db = mysql.connector.connect(**st.secrets["mysql"])
 st.write('EDFS Commands with MySQL Database')
+st.write('*Commands must follow the specified format!')
+st.write('Examples:')
+st.write('ls /user/folder')
+st.write('mkdir /user/folder')
+st.write('rm /user/folder/example.csv')
+st.write('put(example.csv, /user/folder, k = #partitions')
+st.write('getPartitionLocations(example.csv)')
+st.write('readPartition(example.csv, partition#')
 command = st.text_input('Enter a command:')
 com = command.split(' ')
 

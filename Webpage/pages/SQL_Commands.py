@@ -220,7 +220,7 @@ if len(com) > 1:
         id1 = pd.read_sql('select id from metadata where name = "' + desire + '";', db)
         id = str(id1.values[0][0])
         info = pd.read_sql('select location from partition_info where id = ' + id + ';', db)
-        print(info)
+        st.write(info)
     elif 'readPartition' in com[0]:
         input = com[0]
         input1 = input.split('(')
@@ -236,4 +236,4 @@ if len(com) > 1:
         id = id1.values[0][0]
         table = csv.split('.')[0]
         info = pd.read_sql('select * from ' + table + ' partition (' + partt + ');', db)
-        print(info)
+        st.write(info)

@@ -83,7 +83,7 @@ if db.is_connected():
 st.write('PMR with MySQL Database')
 bedroom = st.text_input('Enter a number of bedrooms (1, 2, or 3):')
 state = st.text_input('Enter a state (ex. NY):')
-coname = st.text_input('Enter a country name (ex. Queens):')
+coname = st.text_input('Enter a county name (ex. Queens):')
 year = st.text_input('Enter a date in the format of yyyy_mm (ex. 2011_01):')
 year = 'Column_' + year
 

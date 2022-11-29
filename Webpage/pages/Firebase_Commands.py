@@ -8,7 +8,7 @@ import streamlit as st
 
 st.write('EDFS Commands with Firebase Database')
 st.write('*Commands must follow the specified format!')
-st.write('Examples:')
+st.write('Example Formatting:')
 st.write('ls /user/folder')
 st.write('mkdir /user/folder')
 st.write('rm /user/folder/example.csv')

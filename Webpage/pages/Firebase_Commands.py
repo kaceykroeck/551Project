@@ -13,7 +13,7 @@ st.write('ls /user/folder')
 st.write('mkdir /user/folder')
 st.write('rm /user/folder/example.csv')
 st.write('put(example.csv, /user/folder, k = #partitions)')
-st.write('getPartitionLocations(example.csv)')
+st.write('getPartitionLocations(/user/kacey/beds/example.csv)')
 st.write('readPartition(example.csv, partition#)')
 command = st.text_input('Enter a command:')
 com = command.split(' ')
@@ -120,7 +120,7 @@ if len(com) > 1:
         m1 = json.dumps(response11.json(), indent=4)
     elif 'getPartitionLocations' in com[0]:
         input = com[0]
-        url1 = "https://metadata-114ea-default-rtdb.firebaseio.com"
+        url1 = "https://metadata-114ea-default-rtdb.firebaseio.com/"
         j = input.split('(')
         other = j[1].split(')')
         file = other[0].split('.')[0]
@@ -128,21 +128,21 @@ if len(com) > 1:
         response = requests.get(url)
         st.write(response.content.decode('UTF-8'))
     elif 'readPartition' in com[0]:
-        input = com[0]
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
         j = input.split('(')
         other = j[1].split(')')
         file = other[0]
         um = file.split(',')
-        first = um[0].strip()
-        second = um[1].strip()
+        first = um[0].strip().split('.')[0]
+        second = com[1].split(')')
+        second = 'p' + second[0]
         url = url1 + first + '.json'
         response = requests.get(url)
         fileDict = ast.literal_eval(response.content.decode('UTF-8'))
         for key, value in fileDict.items():
             if key == second:
                 for i in value:
-                    st.write(i)
+                        st.write(i)
     else:
         st.write('Invalid')
 else:

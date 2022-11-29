@@ -10,7 +10,7 @@ import streamlit as st
 db = mysql.connector.connect(**st.secrets["mysql"])
 st.write('EDFS Commands with MySQL Database')
 st.write('*Commands must follow the specified format!')
-st.write('Examples:')
+st.write('Examples Formatting:')
 st.write('ls /user/folder')
 st.write('mkdir /user/folder')
 st.write('rm /user/folder/example.csv')

@@ -7,6 +7,14 @@ import numpy as np
 import streamlit as st
 
 st.write('EDFS Commands with Firebase Database')
+st.write('*Commands must follow the specified format!')
+st.write('Examples:')
+st.write('ls /user/folder')
+st.write('mkdir /user/folder')
+st.write('rm /user/folder/example.csv')
+st.write('put(example.csv, /user/folder, k = #partitions')
+st.write('getPartitionLocations(example.csv)')
+st.write('readPartition(example.csv, partition#')
 command = st.text_input('Enter a command:')
 com = command.split(' ')
 

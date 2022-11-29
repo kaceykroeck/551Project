@@ -123,7 +123,7 @@ if len(com) > 1:
         url1 = "https://metadata-114ea-default-rtdb.firebaseio.com"
         j = input.split('(')
         other = j[1].split(')')
-        file = other[0]
+        file = other[0].split('.')[0]
         url = url1 + file + '.json'
         response = requests.get(url)
         st.write(response.content.decode('UTF-8'))

@@ -76,7 +76,7 @@ def map_three(y, s, c):
     st.write('Reduce Function:')
     st.write(finalReduce)
 
-db = mysql.connector.connect(host='ec2-3-101-14-210.us-west-1.compute.amazonaws.com', user='kaceykroeck', password='kK920395!', db='one', auth_plugin='mysql_native_password')
+db = mysql.connector.connect(**st.secrets["mysql"])
 if db.is_connected():
     st.write("Connection done!")
 

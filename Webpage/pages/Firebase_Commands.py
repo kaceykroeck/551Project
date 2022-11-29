@@ -14,7 +14,7 @@ st.write('mkdir /user/folder')
 st.write('rm /user/folder/example.csv')
 st.write('put(example.csv, /user/folder, k = #partitions)')
 st.write('getPartitionLocations(/user/kacey/beds/example.csv)')
-st.write('readPartition(example.csv, partition#)')
+st.write('readPartition(/user/kacey/beds/example.csv, partition#)')
 command = st.text_input('Enter a command:')
 com = command.split(' ')
 

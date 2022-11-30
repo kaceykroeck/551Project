@@ -26,7 +26,7 @@ def map_one(y, s, c):
             else:
                 reduce[y].append(price)
         st.write('Partition:', partitions[i])
-        st.write(data)
+        st.write(data.values[0][0])
         st.write()
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')
@@ -48,7 +48,7 @@ def map_two(y, s, c):
             else:
                 reduce[y].append(price)
         st.write('Partition:', partitions[i])
-        st.write(data)
+        st.write(data.values[0][0])
         st.write()
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')
@@ -70,7 +70,7 @@ def map_three(y, s, c):
             else:
                 reduce[y].append(price)
         st.write('Partition:', partitions[i])
-        st.write(data)
+        st.write(data.values[0][0])
         st.write()
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')

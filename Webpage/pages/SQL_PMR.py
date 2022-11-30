@@ -82,11 +82,10 @@ def map_three(y, s, c):
     st.write()
     st.write('Highest Rent:', max(finalReduce.values))
     st.write('Lowest Rent:', min(finalReduce.values))
-    st.write('Average Price the month:', sum(finalReduce.values)/len(finalReduce.values))
+    st.write('Average Price this month:', sum(finalReduce.values)/len(finalReduce.values))
     st.write()
     st.write('Distribution of Price:')
     st.bar_chart(sorted(finalReduce.values))
-    st.write()
     st.write()
 
 db = mysql.connector.connect(**st.secrets["mysql"])

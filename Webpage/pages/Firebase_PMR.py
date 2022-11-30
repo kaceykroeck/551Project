@@ -14,7 +14,7 @@ def map_one(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6']
     prices = []
     reduce = {}
-    st.write('Map:')
+    st.write('MAP:')
     for i in range(len(partitions)):
         st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
@@ -31,15 +31,27 @@ def map_one(y, s, c):
                 else:
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
-    st.write()
-    st.write('Reduce Function:')
+    st.write('')
+    st.write('REDUCE:')
     st.write(finalReduce)
+    st.write('')
+    st.write('ANALYTICS:')
+    st.write('Number of Datapoints:')
+    st.write(len(finalReduce.values))
+    st.write('')
+    st.write('Highest Rent:', max(finalReduce.values))
+    st.write('Lowest Rent:', min(finalReduce.values))
+    st.write('Average Price this month:', sum(finalReduce.values)/len(finalReduce.values))
+    st.write('')
+    st.write('Distribution of Price:')
+    st.bar_chart(sorted(finalReduce.values))
+    st.write('')
 
 def map_two(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    st.write('Map:')
+    st.write('MAP:')
     for i in range(len(partitions)):
         st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
@@ -56,15 +68,27 @@ def map_two(y, s, c):
                 else:
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
-    st.write()
-    st.write('Reduce Function:')
+    st.write('')
+    st.write('REDUCE:')
     st.write(finalReduce)
+    st.write('')
+    st.write('ANALYTICS:')
+    st.write('Number of Datapoints:')
+    st.write(len(finalReduce.values))
+    st.write('')
+    st.write('Highest Rent:', max(finalReduce.values))
+    st.write('Lowest Rent:', min(finalReduce.values))
+    st.write('Average Price this month:', sum(finalReduce.values)/len(finalReduce.values))
+    st.write('')
+    st.write('Distribution of Price:')
+    st.bar_chart(sorted(finalReduce.values))
+    st.write('')
 
 def map_three(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    st.write('Map:')
+    st.write('MAP:')
     for i in range(len(partitions)):
         st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
@@ -81,9 +105,21 @@ def map_three(y, s, c):
                 else:
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
-    st.write()
-    st.write('Reduce Function:')
+    st.write('')
+    st.write('REDUCE:')
     st.write(finalReduce)
+    st.write('')
+    st.write('ANALYTICS:')
+    st.write('Number of Datapoints:')
+    st.write(len(finalReduce.values))
+    st.write('')
+    st.write('Highest Rent:', max(finalReduce.values))
+    st.write('Lowest Rent:', min(finalReduce.values))
+    st.write('Average Price this month:', sum(finalReduce.values)/len(finalReduce.values))
+    st.write('')
+    st.write('Distribution of Price:')
+    st.bar_chart(sorted(finalReduce.values))
+    st.write('')
 
 st.write('PMR with Firebase Database')
 bedroom = st.text_input('Enter a number of bedrooms (1, 2, or 3):')

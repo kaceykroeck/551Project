@@ -78,7 +78,7 @@ def map_three(y, s, c):
     st.write('')
     st.write('ANALYTICS:')
     st.write('Number of Datapoints:')
-    st.write(len(finalReduce.values)
+    st.write(len(finalReduce.values))
     st.write()
     st.write('Highest Rent:', max(finalReduce.values))
     st.write('Lowest Rent:', min(finalReduce.values))

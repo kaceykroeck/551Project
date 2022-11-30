@@ -77,7 +77,7 @@ def map_three(y, s, c):
     st.write(finalReduce)
     st.write('')
     st.write('Analytics:')
-    st.write('Average Price:', finalReduce.values[0])
+    st.write('Average Price:', sum(finalReduce.values))
 
 db = mysql.connector.connect(**st.secrets["mysql"])
 if db.is_connected():

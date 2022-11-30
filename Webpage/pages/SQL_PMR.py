@@ -45,6 +45,7 @@ def map_one(y, s, c):
     st.write('')
 
 def map_two(y, s, c):
+    y = 'Column_' + y
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
@@ -79,6 +80,7 @@ def map_two(y, s, c):
     st.write('')
 
 def map_three(y, s, c):
+    y = 'Column_' + y
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
@@ -121,7 +123,6 @@ bedroom = st.text_input('Enter a number of bedrooms (1, 2, or 3):')
 state = st.text_input('Enter a state (ex. NY):')
 coname = st.text_input('Enter a county name (ex. Queens):')
 year = st.text_input('Enter a date in the format of yyyy_mm (ex. 2011_01):')
-year = 'Column_' + year
 
 if bedroom == '1':
     map_one(year,state,coname)

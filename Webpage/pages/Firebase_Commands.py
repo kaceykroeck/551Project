@@ -15,7 +15,7 @@ st.write('rm /user/folder/example.csv')
 st.write('cat /user/folder/example.csv')
 st.write('put(example.csv, /user/folder, k = #partitions)')
 st.write('getPartitionLocations(/user/kacey/beds/example.csv)')
-st.write('readPartition(/user/kacey/beds/example.csv, partition#)')
+st.write('readPartition\(/user/kacey/beds/example,partition#\)')
 command = st.text_input('Enter a command:')
 com = command.split(' ')
 
@@ -142,7 +142,7 @@ if len(com) > 1:
         response = requests.get(url)
         fileDict = ast.literal_eval(response.content.decode('UTF-8'))
         for key, value in fileDict.items():
-            if key == second:
+            if key == 'p'+str(second):
                 for i in value:
                         st.write(i)
     else:

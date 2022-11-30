@@ -78,7 +78,9 @@ def map_three(y, s, c):
     st.write('')
     st.write('Analytics:')
     st.write('Average Price the month:', sum(finalReduce.values)/len(finalReduce.values))
-    st.bar_chart(finalReduce.values)
+    st.write()
+    st.write('Distribution of Price')
+    st.bar_chart(sorted(finalReduce.values))
 
 db = mysql.connector.connect(**st.secrets["mysql"])
 if db.is_connected():

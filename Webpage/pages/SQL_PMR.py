@@ -76,7 +76,7 @@ def map_three(y, s, c):
     st.write('Reduce Function:')
     st.write(finalReduce)
     st.write('')
-    st.write('Analytics:')
+    st.write('ANALYTICS:')
     st.write('Number of Datapoints:')
     st.write(len(finalReduce.values)
     st.write()
@@ -87,7 +87,7 @@ def map_three(y, s, c):
     st.write('Distribution of Price:')
     st.bar_chart(sorted(finalReduce.values))
     st.write()
-    st.write
+    st.write()
 
 db = mysql.connector.connect(**st.secrets["mysql"])
 if db.is_connected():

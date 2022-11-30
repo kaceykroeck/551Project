@@ -121,6 +121,7 @@ if len(com) > 1:
         m1 = json.dumps(response11.json(), indent=4)
     elif 'getPartitionLocations' in com[0]:
         input = com[0]
+        st.write(input)
         url1 = "https://metadata-114ea-default-rtdb.firebaseio.com/"
         j = input.split('(')
         other = j[1].split(')')

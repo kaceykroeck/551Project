@@ -26,11 +26,11 @@ def map_one(y, s, c):
             else:
                 reduce[y].append(price)
         st.write('Partition:', partitions[i])
-        st.write(data.values[0][0])
+        st.write(data)
         st.write()
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')
-    st.write(finalReduce)
+    st.write(finalReduce.values[0][0])
 
 def map_two(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
@@ -48,11 +48,11 @@ def map_two(y, s, c):
             else:
                 reduce[y].append(price)
         st.write('Partition:', partitions[i])
-        st.write(data.values[0][0])
+        st.write(data)
         st.write()
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')
-    st.write(finalReduce)
+    st.write(finalReduce.values[0][0])
 
 def map_three(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
@@ -70,11 +70,11 @@ def map_three(y, s, c):
             else:
                 reduce[y].append(price)
         st.write('Partition:', partitions[i])
-        st.write(data.values[0][0])
+        st.write(data)
         st.write()
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')
-    st.write(finalReduce)
+    st.write(finalReduce.values[0][0])
 
 db = mysql.connector.connect(**st.secrets["mysql"])
 if db.is_connected():

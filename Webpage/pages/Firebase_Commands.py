@@ -127,7 +127,7 @@ if len(com) > 1:
         file = other[0].split('.')[0]
         url = url1 + file + '.json'
         response = requests.get(url)
-        st.write(response.content.decode('UTF-8'))
+        st.write(response.content)
     elif 'readPartition' in com[0]:
         input = com[0]
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"

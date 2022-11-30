@@ -31,6 +31,20 @@ def map_one(y, s, c):
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')
     st.write(finalReduce)
+    st.write('REDUCE:')
+    st.write(finalReduce)
+    st.write('')
+    st.write('ANALYTICS:')
+    st.write('Number of Datapoints:')
+    st.write(len(finalReduce.values))
+    st.write('')
+    st.write('Highest Rent:', max(finalReduce.values))
+    st.write('Lowest Rent:', min(finalReduce.values))
+    st.write('Average Price this month:', sum(finalReduce.values)/len(finalReduce.values))
+    st.write('')
+    st.write('Distribution of Price:')
+    st.bar_chart(sorted(finalReduce.values))
+    st.write('')
 
 def map_two(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
@@ -53,12 +67,26 @@ def map_two(y, s, c):
     finalReduce = pd.DataFrame(reduce)
     st.write('Reduce Function:')
     st.write(finalReduce)
+    st.write('REDUCE:')
+    st.write(finalReduce)
+    st.write('')
+    st.write('ANALYTICS:')
+    st.write('Number of Datapoints:')
+    st.write(len(finalReduce.values))
+    st.write('')
+    st.write('Highest Rent:', max(finalReduce.values))
+    st.write('Lowest Rent:', min(finalReduce.values))
+    st.write('Average Price this month:', sum(finalReduce.values)/len(finalReduce.values))
+    st.write('')
+    st.write('Distribution of Price:')
+    st.bar_chart(sorted(finalReduce.values))
+    st.write('')
 
 def map_three(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    st.write('Map:')
+    st.write('MAP:')
     for i in range(len(partitions)):
         data = pd.read_sql('select count(distinct(' + y + ')) as Number_of_rows from city_MR_3_bedroom_n partition(' + partitions[i] + ') where State= "' + s + '" and CountyName= "' + c + '";', db)
         red_data = pd.read_sql('select ' + y + ' from city_MR_3_bedroom_n partition(' + partitions[i] + ') where State= "' + s + '" and CountyName= "' + c + '";', db)
@@ -73,20 +101,20 @@ def map_three(y, s, c):
         st.write(data)
         st.write()
     finalReduce = pd.DataFrame(reduce)
-    st.write('Reduce Function:')
+    st.write('REDUCE:')
     st.write(finalReduce)
     st.write('')
     st.write('ANALYTICS:')
     st.write('Number of Datapoints:')
     st.write(len(finalReduce.values))
-    st.write()
+    st.write('')
     st.write('Highest Rent:', max(finalReduce.values))
     st.write('Lowest Rent:', min(finalReduce.values))
     st.write('Average Price this month:', sum(finalReduce.values)/len(finalReduce.values))
-    st.write()
+    st.write('')
     st.write('Distribution of Price:')
     st.bar_chart(sorted(finalReduce.values))
-    st.write()
+    st.write('')
 
 db = mysql.connector.connect(**st.secrets["mysql"])
 if db.is_connected():

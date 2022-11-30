@@ -14,7 +14,7 @@ def map_one(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6']
     prices = []
     reduce = {}
-    st.write('MAP:')
+    st.write('MAP OUTPUT:')
     for i in range(len(partitions)):
         st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
@@ -32,7 +32,7 @@ def map_one(y, s, c):
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
     st.write('')
-    st.write('REDUCE:')
+    st.write('REDUCE OUTPUT:')
     st.write(finalReduce)
     st.write('')
     st.write('ANALYTICS:')
@@ -51,7 +51,7 @@ def map_two(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    st.write('MAP:')
+    st.write('MAP OUTPUT:')
     for i in range(len(partitions)):
         st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
@@ -69,7 +69,7 @@ def map_two(y, s, c):
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
     st.write('')
-    st.write('REDUCE:')
+    st.write('REDUCE OUTPUT:')
     st.write(finalReduce)
     st.write('')
     st.write('ANALYTICS:')
@@ -88,7 +88,7 @@ def map_three(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    st.write('MAP:')
+    st.write('MAP OUTPUT:')
     for i in range(len(partitions)):
         st.write('Partition:', partitions[i])
         url1 = "https://final-project-551-ce020-default-rtdb.firebaseio.com"
@@ -106,7 +106,7 @@ def map_three(y, s, c):
                     reduce[y].append(want)
     finalReduce = pd.DataFrame(reduce)
     st.write('')
-    st.write('REDUCE:')
+    st.write('REDUCE OUTPUT:')
     st.write(finalReduce)
     st.write('')
     st.write('ANALYTICS:')

@@ -14,7 +14,7 @@ def map_one(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6']
     prices = []
     reduce = {}
-    st.write('Map:')
+    st.write('MAP:')
     for i in range(len(partitions)):
         data = pd.read_sql('select count(distinct(' + y + ')) as Number_of_rows from city_MR_1_bedroom_n partition('+ partitions[i] +') where State= "' + s +'" and CountyName= "'+ c + '";',db)
         red_data = pd.read_sql('select ' + y + ' from city_MR_1_bedroom_n partition('+ partitions[i] +') where State= "' + s +'" and CountyName= "'+ c + '";',db)
@@ -48,7 +48,7 @@ def map_two(y, s, c):
     partitions = ['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10']
     prices = []
     reduce = {}
-    st.write('Map:')
+    st.write('MAP:')
     for i in range(len(partitions)):
         data = pd.read_sql('select count(distinct(' + y + ')) as Number_of_rows from city_MR_2_bedroom_n partition(' + partitions[i] + ') where State= "' + s + '" and CountyName= "' + c + '";', db)
         red_data = pd.read_sql('select ' + y + ' from city_MR_2_bedroom_n partition(' + partitions[i] + ') where State= "' + s + '" and CountyName= "' + c + '";', db)
